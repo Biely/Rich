@@ -54,7 +54,7 @@
                       <div class="form-group">
                         <label>网址缩略名(slug) <small class="text-red">*</small> <span class="text-green">[a-z0-9\-_]{1,120}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
                         <div class="input-group mono url_slug">
-                          <p>//example.org/{category}/<input type="text" id="slug" name="slug" autocomplete="off" value="{{ old('slug') }}" class="slug" maxlength="120" pattern="[a-z0-9_-]{1,120}">.html</p>
+                          <p>//example.org/{category}/<input type="text" id="slug" name="slug" autocomplete="off" value="{{ time() }}" class="slug" maxlength="120" pattern="[a-z0-9_-]{1,120}">.html</p>
                         </div>
                       </div>
                       <div class="form-group">
@@ -78,11 +78,15 @@
                       </div>
                       <div class="form-group">
                         <label>缩略图  <a href="javascript:void(0);" class="uploadPic" data-id="thumb"><i class="fa fa-fw fa-picture-o" title="上传"></i></a>  <a href="javascript:void(0);" class="previewPic" data-id="thumb"><i class="fa fa-fw fa-eye" title="预览小图"></i></a></label>
-                        <input type="text" class="form-control" id="thumb" name="thumb" value="{{ old('thumb') }}" placeholder="缩略图地址：如{{ url('') }}/assets/img/yas_logo.png" readonly="readonly">
+                        <input type="text" class="form-control" id="thumb" name="thumb" value="{{ old('thumb') }}" placeholder="缩略图地址：如{{ url('') }}/assets/img/yas_logo.png" >
                       </div>
                       <div class="form-group">
                         <label>文章摘要 <small class="text-red">*</small><span class="text-green">min:10</span></label>
                         <textarea class="form-control" name="description" rows="3" cols="200" autocomplete="off" placeholder="文章摘要">{{ old('description') }}</textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>关键词 <small class="text-red">*</small><span class="text-green">min:10</span></label>
+                        <textarea class="form-control" name="keyword" rows="3" cols="200" autocomplete="off" placeholder="关键词">{{ old('keyword') }}</textarea>
                       </div>
                       <div class="form-group">
                         <label>正文(Markdown) <small class="text-red">*</small><span class="text-green">min:20</span></label>

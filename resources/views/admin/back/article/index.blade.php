@@ -52,6 +52,7 @@
                         <th>缩略图</th>
                         <th>分类</th>
                         <th>更新时间</th>
+                        <th>删除</th>
                       </tr>
                       <!--tr-th end-->
 
@@ -75,6 +76,15 @@
                         </td>
                         <td class="text-red"><a href="{{ _route('admin:article.index', ['s_cid' => $art->cid] ) }}">{{ $art->category->name }}</a></td>
                         <td>{{ $art->updated_at }}</td>
+                        <td>
+                        @can('article-write')
+                            <form action="{{ _route('admin:article.destroy', $art->id) }}" method="POST">
+                              {{ csrf_field() }}
+                              {{ method_field('DELETE') }}
+                              <button type="submit" class="btn btn-sm btn-danger status-delete-btn">删除</button>
+                            </form>
+                        @endcan
+                        </td>
                       </tr>
                       @endforeach
 

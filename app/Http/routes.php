@@ -151,10 +151,10 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 
     //桌面站主页
     Route::get('/', 'HomeController@getIndex');
-
     //设置语言版本
     Route::get('lang', 'HomeController@getLang');
-
+    
+    Route::get('showservice/{select}','HomeController@showservice');
     # 展示分类
     Route::get('{category}', 'HomeController@getCategory');
 

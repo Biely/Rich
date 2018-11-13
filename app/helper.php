@@ -534,6 +534,17 @@ function category($slug)
         return null;
     }
 }
+
+function cid_category($cid)
+{
+    $model = app()->make('Douyasi\Models\Category');
+    $category = $model->where('id', $cid)->first();
+    if ($category) {
+        return $category;
+    } else {
+        return null;
+    }
+}
 /**
  * 获取分类组
  */

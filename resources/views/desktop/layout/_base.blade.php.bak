@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>锐旗官网</title>
+    <title>上知策划—中国资深的VI设计、品牌策划、品牌设计公司之一，长三角品牌建设首选服务商</title>
+    <meta name="keywords" content="标志设计,logo设计,网络新媒体,品牌设计,品牌策划,品牌咨询,影像视频,传播推广,品牌设计公司,品牌策划公司,网站建设公司,广州品牌设计,广州品牌策划,广州建站,锐旗策划，{{ cache('website_keywords') }}" />
+    <meta name="description" content="锐旗策划主要为中小企业提供品牌设计,品牌策划,品牌建设,网站建设,logo设计,包装设计,平面设计,网站设计、企业形象设计、品牌形象设计等,立志成为珠三角地区最值得信赖的品牌策划与设计公司。" />
+    <meta name="description" content="@section('description') {{ isset($description) ? $description : '芽丝轻博客,基于YASCMF构建!' }} @show{{-- meta描述 --}}" />
+    <meta name="keywords" content="Blog,Writer,YASCMF,AdminLTE,{{ cache('website_keywords') }}" />
+    <meta name="author" content="{{ cache('system_author_website', 'http://douyasi.com') }}" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{ _asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ _asset('assets/css/icomoon_style.css') }}" />
+    <link rel="stylesheet" href="{{ _asset('assets/css/markdown_style.css') }}" />
+    @section('htmlHead')
+    @show{{-- head区域 --}}
+</head>
+<body class="paper">
+
+
+<div id="con_wrapper">
+    <div id="r_con">
+        <div class="header">
+            <a href="/"><h1>芽丝轻博客</h1></a>
+        </div>
+        
+        @section('mainContent')
+        @show{{-- 主体内容 --}}
+
+
+        <div class="footer">
+            <p class="slogan">designed &amp; developed by <a href="https://raoyc.com">raoyc</a>  设计崇简</p>
+            <p>&copy; 2016 <a href="/">芽丝轻博客</a> 版权所有 -  <a href="http://www.miibeian.gov.cn/">{{ cache('website_icp', '鄂ICP备15014910号-3') }}</a></p>
+        </div>
+    </div>
+</div>
+
+@section('afterFooter')
+@show{{-- 页脚区域 --}}
+</body>
+</html>

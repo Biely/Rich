@@ -62,6 +62,7 @@ class ArticleController extends BackController
         $article = new Article;
         $article->title = e($inputs['title']);
         $article->cid = intval($inputs['cid']);
+        $article->keyword = e($inputs['keyword']);
         $article->description = e($inputs['description']);
         $article->content = $inputs['content'];
         $article->slug = $inputs['slug'];
@@ -125,5 +126,19 @@ class ArticleController extends BackController
             return redirect()->back()->withInput($request->input())->with('fail', '数据库操作返回异常！');
         }
     }
-
+    
+    public function destroy($id)
+    {
+        if (Gate::denies('article-write')) {
+            return deny();
+        }
+    //
+        $category = Article::find($id);
+        //dd($article);
+        if($category->delete()) {
+            return redirect()->to(site_path('article', 'admin'))->with('message', '成功删除文章！');
+        } else {
+            return redirect()->to(site_path('article', 'admin'))->with('fail', '数据库操作返回异常！');
+        }
+    }
 }

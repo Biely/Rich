@@ -19,6 +19,7 @@ class Article extends Model
                             'thumb',
                             'slug',
                             'cid',
+                            'keyword',
                             'description',
                             'content',
                         ];
